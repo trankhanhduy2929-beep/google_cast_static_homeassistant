@@ -1,0 +1,60 @@
+{
+  "title": "Google Cast Static IP",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to a Cast device by static IP",
+        "description": "Enter the speaker's literal IPv4 address. Reserve this address in your router so it does not change. UUID is normally detected automatically; enter the UUID from a PyChromecast log only if automatic device information cannot be read. This integration does not use mDNS or .local names.",
+        "data": {
+          "host": "IPv4 address",
+          "port": "Cast port",
+          "device_uuid": "Device UUID (optional fallback)"
+        }
+      },
+      "reconfigure": {
+        "title": "Update the Cast device IP address",
+        "description": "Enter the new IPv4 address. The device UUID must match the existing device.",
+        "data": {
+          "host": "IPv4 address",
+          "port": "Cast port",
+          "device_uuid": "Device UUID"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to a Cast device at this address. Check the IP address and TCP port 8009.",
+      "different_device": "This IP address belongs to a different Cast device.",
+      "invalid_cast_device": "The device did not return a valid Google Cast UUID.",
+      "invalid_ip": "Enter a literal IPv4 address, for example 192.168.1.50.",
+      "invalid_port": "Enter a port from 1 to 65535.",
+      "invalid_uuid": "Enter a valid UUID, for example 19fdb31c-52ca-89c2-cc5a-8e8b7b7cf202.",
+      "uuid_mismatch": "The entered UUID does not match the Cast device at this address.",
+      "uuid_required": "Port 8009 is reachable, but device information could not be read. Enter the UUID shown in the PyChromecast log.",
+      "unknown": "Unexpected error while connecting to the Cast device."
+    },
+    "abort": {
+      "already_configured": "This Cast device is already configured.",
+      "reconfigure_successful": "The Cast device was reconfigured successfully."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Connection settings",
+        "description": "The client retries forever. Retry delay is the initial delay; PyChromecast increases it after repeated failures. Socket timeout controls each connection attempt.",
+        "data": {
+          "retry_wait": "Retry delay (seconds)",
+          "socket_timeout": "Socket timeout (seconds)"
+        }
+      }
+    }
+  },
+  "exceptions": {
+    "command_failed": {
+      "message": "The Cast command failed: {error}"
+    },
+    "not_connected": {
+      "message": "The Cast speaker is not connected. The integration will continue retrying automatically."
+    }
+  }
+}

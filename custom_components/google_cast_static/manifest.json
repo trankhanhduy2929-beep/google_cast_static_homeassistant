@@ -1,0 +1,13 @@
+{
+  "domain": "google_cast_static",
+  "name": "Google Cast Static IP",
+  "codeowners": [],
+  "config_flow": true,
+  "dependencies": ["media_source"],
+  "documentation": "https://github.com/home-assistant-libs/pychromecast#readme",
+  "integration_type": "device",
+  "iot_class": "local_push",
+  "loggers": ["pychromecast"],
+  "requirements": ["PyChromecast>=14.0.9,<15"],
+  "version": "1.0.0"
+}

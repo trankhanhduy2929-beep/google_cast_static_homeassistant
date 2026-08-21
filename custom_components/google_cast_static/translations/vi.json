@@ -1,0 +1,60 @@
+{
+  "title": "Google Cast IP tĩnh",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Kết nối thiết bị Cast bằng IP tĩnh",
+        "description": "Nhập địa chỉ IPv4 của loa và giữ IP cố định bằng DHCP reservation trên router. UUID thường được tự nhận diện; chỉ nhập UUID từ log PyChromecast nếu không đọc được thông tin thiết bị. Tích hợp này không dùng mDNS hoặc tên .local.",
+        "data": {
+          "host": "Địa chỉ IPv4",
+          "port": "Cổng Cast",
+          "device_uuid": "UUID thiết bị (dự phòng, không bắt buộc)"
+        }
+      },
+      "reconfigure": {
+        "title": "Cập nhật địa chỉ IP của thiết bị Cast",
+        "description": "Nhập địa chỉ IPv4 mới. UUID phải trùng với thiết bị đã cấu hình.",
+        "data": {
+          "host": "Địa chỉ IPv4",
+          "port": "Cổng Cast",
+          "device_uuid": "UUID thiết bị"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Không thể kết nối thiết bị Cast tại địa chỉ này. Hãy kiểm tra IP và cổng TCP 8009.",
+      "different_device": "Địa chỉ IP này thuộc về một thiết bị Cast khác.",
+      "invalid_cast_device": "Thiết bị không trả về UUID Google Cast hợp lệ.",
+      "invalid_ip": "Hãy nhập địa chỉ IPv4 trực tiếp, ví dụ 192.168.1.50.",
+      "invalid_port": "Hãy nhập cổng từ 1 đến 65535.",
+      "invalid_uuid": "Hãy nhập UUID hợp lệ, ví dụ 19fdb31c-52ca-89c2-cc5a-8e8b7b7cf202.",
+      "uuid_mismatch": "UUID đã nhập không trùng với thiết bị Cast tại địa chỉ này.",
+      "uuid_required": "Cổng 8009 truy cập được nhưng không đọc được thông tin thiết bị. Hãy nhập UUID hiển thị trong log PyChromecast.",
+      "unknown": "Có lỗi ngoài dự kiến khi kết nối thiết bị Cast."
+    },
+    "abort": {
+      "already_configured": "Thiết bị Cast này đã được cấu hình.",
+      "reconfigure_successful": "Đã cập nhật cấu hình thiết bị Cast thành công."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Thiết lập kết nối",
+        "description": "Client sẽ thử kết nối lại vô hạn. Khoảng nghỉ là giá trị ban đầu; PyChromecast sẽ tăng dần sau nhiều lần lỗi. Thời gian chờ socket áp dụng cho mỗi lần kết nối.",
+        "data": {
+          "retry_wait": "Khoảng nghỉ thử lại (giây)",
+          "socket_timeout": "Thời gian chờ socket (giây)"
+        }
+      }
+    }
+  },
+  "exceptions": {
+    "command_failed": {
+      "message": "Lệnh Cast thất bại: {error}"
+    },
+    "not_connected": {
+      "message": "Loa Cast chưa kết nối. Tích hợp sẽ tiếp tục tự động thử lại."
+    }
+  }
+}
