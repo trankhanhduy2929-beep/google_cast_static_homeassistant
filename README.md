@@ -10,6 +10,12 @@ Kết nối socket được giữ bởi PyChromecast và tự thử lại vô h�
 
 Integration chấp nhận PyChromecast `14.0.9` đến trước `15.0`, tránh xung đột giữa các bản Home Assistant đang dùng `14.0.9` hoặc `14.0.10`.
 
+## Phiên bản 1.1.0
+
+- Thêm icon riêng cho integration ở độ phân giải `256×256` và `512×512`.
+- Home Assistant `2026.3` trở lên tự đọc icon từ thư mục `brand` của custom integration.
+- Với Home Assistant cũ hơn, integration vẫn hoạt động bình thường nhưng có thể hiện icon mặc định.
+
 ## Chuẩn bị mạng
 
 1. Đặt **DHCP reservation/IP tĩnh** cho Google Home Mini trên router.
